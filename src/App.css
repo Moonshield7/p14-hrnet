@@ -72,6 +72,14 @@
 #create-employee input {
   border-radius: 5px;
   border: 1px solid black;
+  padding: 2px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
 .form-title {
