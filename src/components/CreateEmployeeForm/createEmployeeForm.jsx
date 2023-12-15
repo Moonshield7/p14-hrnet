@@ -1,4 +1,43 @@
+import { useDispatch } from 'react-redux';
+import { addEmployee } from '../../redux/slices/employeesSlice';
+import { useState } from 'react';
+
 function CreateEmployeehtmlForm () {
+  const dispatch = useDispatch();
+  const [formError, setFormError] = useState(false);
+
+  function handleSubmit(e){
+    e.preventDefault();
+    const firstname = document.getElementById('first-name').value;
+    const lastname = document.getElementById('last-name').value;
+    const birthday = document.getElementById('date-of-birth').value;
+    const startday = document.getElementById('start-date').value;
+    const street = document.getElementById('street').value;
+    const city = document.getElementById('city').value;
+    const state = 'placeholder';
+    const zipCode = document.getElementById('zip-code').value;
+    const department = document.getElementById('department').value;
+
+    if(firstname.length > 0 && lastname.length > 0 && birthday.length > 0 && startday.length > 0 && street.length > 0 && city.length > 0 && department.length > 0 && zipCode > 0){
+      dispatch(addEmployee({
+        firstname: firstname,
+        lastname: lastname,
+        birthday: birthday,
+        startday: startday,
+        address: {
+          street: street,
+          city: city,
+          state: state,
+          zipCode: zipCode
+        },
+        department: department,
+      }));
+      setFormError(false);
+    } else {
+      setFormError(true);
+    }
+    
+  }
 
   return (
     <form action="#" id="create-employee">
@@ -39,7 +78,8 @@ function CreateEmployeehtmlForm () {
           <option>Human Resources</option>
           <option>Legal</option>
       </select>
-      <button className="form-button">Save</button>
+      <button className="form-button" onClick={handleSubmit}>Save</button>
+      {formError ? <p>Please, fill all of the form inputs</p> : ''}
     </form>
   );
 }
