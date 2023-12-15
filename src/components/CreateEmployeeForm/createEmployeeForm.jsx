@@ -1,11 +1,16 @@
 import { useDispatch } from 'react-redux';
 import { addEmployee } from '../../redux/slices/employeesSlice';
 import { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
 
 function CreateEmployeehtmlForm () {
   const dispatch = useDispatch();
 
   const [formError, setFormError] = useState(false);
+  const [startDate, setStartDate] = useState(new Date());
+  const [birthDate, setBirthDate] = useState();
 
 
   function handleSubmit(e){
@@ -51,10 +56,12 @@ function CreateEmployeehtmlForm () {
       <input type="text" id="last-name" />
 
       <label htmlFor="date-of-birth">Date of Birth</label>
-      <input id="date-of-birth" type="text" />
+      {/* <input id="date-of-birth" type="text" /> */}
+      <DatePicker id="date-of-birth" selected={birthDate} onChange={(date) => setBirthDate(date)} />
 
       <label htmlFor="start-date">Start Date</label>
-      <input id="start-date" type="text" />
+      {/* <input id="start-date" type="text" /> */}
+      <DatePicker id="start-date" selected={startDate} onChange={(date) => setStartDate(date)} />
 
       <fieldset className="address">
           <legend className="address-title">Address</legend>
