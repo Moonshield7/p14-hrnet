@@ -11,6 +11,9 @@
   font-family: var(--OpenSans);
 }
 
+/*  ##########
+      HEADER
+    ########## */
 .navbar {
   width: 100%;
   height: 90px;
@@ -32,5 +35,82 @@
   height: 55px;
   border: none;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-button:hover{
+  cursor: pointer;
+}
+
+/*  ##########
+       HOME
+    ########## */
+#create-employee {
+  font-weight: 600;
+  margin: auto;
+  margin-top: 35px;
+  padding:40px 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(100, 158, 233, 0.445);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.196) 0px 5px 15px;
+}
+
+#create-employee label {
+  margin-top: 10px;
+}
+
+#create-employee input {
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.form-title {
+  font-family: var(--BreeSerif);
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.form-button {
+  margin-top: 20px;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: rgb(78, 155, 78);
+  color: white;
+}
+
+.address{
+  background-color: rgba(255, 255, 255, 0.445);
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-top: 10px;
+  padding: 5px 25px 25px 25px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width : 880px) {
+  #create-employee {
+    width: 100%;
+    margin-top: 0;
+    padding: 10px;
+  }
+  .form-title{
+    text-align: center;
+  }
+  .address{
+    width: 80%;
+  }
 }
