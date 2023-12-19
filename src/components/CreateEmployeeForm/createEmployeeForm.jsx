@@ -89,7 +89,7 @@ function CreateEmployeehtmlForm () {
       </fieldset>
 
       <label htmlFor="department">Department</label>
-      <SelectComponent type="departments" opts={departments}/>
+      <SelectComponent type="department" opts={departments}/>
       <button className="form-button" onClick={handleSubmit}>Save</button>
       {formError ? <p>Please, fill all of the form inputs</p> : ''}
     </form>

@@ -1,14 +1,12 @@
-import { useSelector } from 'react-redux';
+import EmployeeTable from '../../components/EmployeeTable/employeeTable';
 import Header from '../../components/Header/header';
-import { showEmployees } from '../../redux/slices/employeesSlice';
+
 
 function EmployeesList () {
-  const employees = useSelector(showEmployees);
-  console.table(employees);
   return (
     <div>
       <Header />
-      honk
+      <EmployeeTable />
     </div>
   );
 }
