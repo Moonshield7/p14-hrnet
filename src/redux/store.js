@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import employeesReducer from './slices/employeesSlice';
+import statesReducer from './slices/statesSlice';
 
 export const store = configureStore({
   reducer: {
-    employees: employeesReducer
+    employees: employeesReducer,
+    states: statesReducer
   }
 });

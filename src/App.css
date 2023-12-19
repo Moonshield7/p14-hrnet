@@ -122,3 +122,9 @@ input:-webkit-autofill:active{
     width: 80%;
   }
 }
+
+.custom-select {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 2px;
+}
