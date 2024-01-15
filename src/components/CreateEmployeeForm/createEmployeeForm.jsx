@@ -25,31 +25,40 @@ function CreateEmployeehtmlForm () {
 
   function handleSubmit(e){
     e.preventDefault();
-    const firstname = document.getElementById('first-name').value;
-    const lastname = document.getElementById('last-name').value;
-    const birthday = document.getElementById('date-of-birth').value;
-    const startday = document.getElementById('start-date').value;
-    const street = document.getElementById('street').value;
-    const city = document.getElementById('city').value;
-    const state = document.getElementById('state').value;
-    const zipCode = document.getElementById('zip-code').value;
-    const department = document.getElementById('department').value;
+    const firstname = document.getElementById('first-name');
+    const lastname = document.getElementById('last-name');
+    const birthday = document.getElementById('date-of-birth');
+    const startday = document.getElementById('start-date');
+    const street = document.getElementById('street');
+    const city = document.getElementById('city');
+    const state = document.getElementById('state');
+    const zipCode = document.getElementById('zip-code');
+    const department = document.getElementById('department');
 
-    console.log(state);
-
-    if(firstname.length > 0 && lastname.length > 0 && birthday.length > 0 && startday.length > 0 && street.length > 0 && city.length > 0 && department.length > 0 && zipCode > 0){
+    if(firstname.value.length > 0 && lastname.value.length > 0 && birthday.value.length > 0 && startday.value.length > 0 && street.value.length > 0 && city.value.length > 0 && department.value.length > 0 && zipCode.value > 0){
       dispatch(addEmployee({
-        firstname: firstname,
-        lastname: lastname,
-        birthday: birthday,
-        startday: startday,
-        street: street,
-        city: city,
-        state: state,
-        zipcode: zipCode,
-        department: department,
+        firstname: firstname.value,
+        lastname: lastname.value,
+        birthday: birthday.value,
+        startday: startday.value,
+        street: street.value,
+        city: city.value,
+        state: state.value,
+        zipcode: zipCode.value,
+        department: department.value,
       }));
       setFormError(false);
+
+      firstname.value = '';
+      lastname.value = '';
+      birthday.value = '';
+      startday.value = '';
+      street.value = '';
+      city.value = '';
+      state.value = '';
+      zipCode.value = '';
+      department.value = '';
+      
     } else {
       setFormError(true);
     }
