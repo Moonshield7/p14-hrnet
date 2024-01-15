@@ -43,12 +43,10 @@ function CreateEmployeehtmlForm () {
         lastname: lastname,
         birthday: birthday,
         startday: startday,
-        address: {
-          street: street,
-          city: city,
-          state: state,
-          zipCode: zipCode
-        },
+        street: street,
+        city: city,
+        state: state,
+        zipcode: zipCode,
         department: department,
       }));
       setFormError(false);

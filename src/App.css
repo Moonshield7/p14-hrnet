@@ -109,22 +109,31 @@ input:-webkit-autofill:active{
   border-radius: 10px;
 }
 
-@media screen and (max-width : 880px) {
-  #create-employee {
+
+.custom-select {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 2px;
+}
+
+.employee-table-container {
+  width: 95%;
+  margin: auto;
+  margin-top: 25px;
+}
+@media screen and (max-width : 1060px){
+  .employee-table-container{
     width: 100%;
-    margin-top: 0;
-    padding: 10px;
+    margin: 0;
+    margin-top: 5px;
   }
+}
+@media screen and (max-width : 880px) {
   .form-title{
     text-align: center;
   }
   .address{
     width: 80%;
   }
-}
 
-.custom-select {
-  border-radius: 5px;
-  border: 1px solid black;
-  padding: 2px;
 }
