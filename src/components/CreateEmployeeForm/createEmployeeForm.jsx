@@ -6,8 +6,29 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import SelectComponent from '../SelectComponent/selectComponent';
 
+import { Box, Typography } from '@mui/material';
+import Modal from '@mui/material/Modal';
+
+
+const modalStyle = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+
 
 function CreateEmployeehtmlForm () {
+  // Handlers for the modal
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const dispatch = useDispatch();
   const states = useSelector(getAllStates);
 
@@ -18,10 +39,10 @@ function CreateEmployeehtmlForm () {
   // Array containing the departments for the select component
   const departments = ['Sales', 'Marketing', 'Engineering', 'Human Resources', 'Legal'];
 
+  //Handlers for the form
   const [formError, setFormError] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
   const [birthDate, setBirthDate] = useState();
-
 
   function handleSubmit(e){
     e.preventDefault();
@@ -48,6 +69,7 @@ function CreateEmployeehtmlForm () {
         department: department.value,
       }));
       setFormError(false);
+      handleOpen();
 
       firstname.value = '';
       lastname.value = '';
@@ -66,6 +88,20 @@ function CreateEmployeehtmlForm () {
 
   return (
     <form action="#" id="create-employee">
+          <Modal
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="form-validate-modal"
+    >
+      <Box sx={modalStyle}>
+        <Typography id="modal-modal-title" variant="h6" component="h2">
+         Le formulaire a bien été envoyé !
+        </Typography>
+        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+         Le nouvel employé a bien été créé, et est maintenant visible dans le tableau.
+        </Typography>
+      </Box>
+    </Modal>
       <h2 className="form-title">Create a new employee</h2>
       <label htmlFor="first-name">First Name</label>
       <input type="text" id="first-name" />
