@@ -24,6 +24,7 @@ To locally start the app, use `npm run dev` and open the tab http://localhost:51
 | Redux Toolkit | 2.0.1 |
 | ESLint | 8.55.0 |
 | Vite | 5.0.8 |
+| FontAwesome | 6.5.1 |
 
 ### File organization
 
@@ -43,4 +44,5 @@ Some of the components come from external packages.
 
 Datepicker : https://github.com/Hacker0x01/react-datepicker/tree/main
 
+Modal : https://mui.com/
 
