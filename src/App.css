@@ -95,7 +95,7 @@ input:-webkit-autofill:active{
   border: none;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-color: rgb(78, 155, 78);
+  background-color: rgb(29, 87, 29);
   color: white;
 }
 
@@ -120,7 +120,7 @@ input:-webkit-autofill:active{
   width: 95%;
   margin: auto;
   margin-top: 25px;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 @media screen and (max-width : 1060px){
   .employee-table-container{
