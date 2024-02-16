@@ -1,5 +1,5 @@
 # P14 : Migrer une librairie jQuery vers React
-## Par Fannie Presman - Décembre 2023
+## Par Seth Presman - Décembre 2023
 
 ### Getting started
 
@@ -18,8 +18,6 @@ To locally start the app, use `npm run dev` and open the tab http://localhost:51
 | React | 18.2.0 |
 | react-router | 6.20.1 |
 | react-router-dom | 6.20.1 |
-| prop-types | 15.8.1 |
-| Redux | 4.2.1 |
 | react-redux | 9.0.4 |
 | Redux Toolkit | 2.0.1 |
 | ESLint | 8.55.0 |
@@ -29,8 +27,6 @@ To locally start the app, use `npm run dev` and open the tab http://localhost:51
 ### File organization
 
 The files containing the app are placed in the **src** folder.
-
-The **assets** folder contains the images used in the app.
 
 The **components** folder contains the components that are used to build tha app.
 
@@ -46,3 +42,4 @@ Datepicker : https://github.com/Hacker0x01/react-datepicker/tree/main
 
 Modal : https://mui.com/
 
+Table : https://www.npmjs.com/package/moonshield-table
